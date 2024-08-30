@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar WhatsApp</title>
+</head>
+<body>
+    <button id="sendWhatsApp">Enviar WhatsApp</button>
+
+    <script>
+        document.getElementById("sendWhatsApp").addEventListener("click", function() {
+            // Número de teléfono en formato internacional
+            var numero = "521234567890"; // Ejemplo: 52 (México) + número de teléfono
+            // Mensaje que deseas enviar
+            var mensaje = "Hola, este es un mensaje preconfigurado.";
+            
+            // Codificar el mensaje para URL
+            var mensajeCodificado = encodeURIComponent(mensaje);
+            
+            // Crear el enlace
+            var enlace = "https://wa.me/" + numero + "?text=" + mensajeCodificado;
+            
+            // Redirigir al enlace
+            window.open(enlace, '_blank');
+        });
+    </script>
+</body>
+</html>

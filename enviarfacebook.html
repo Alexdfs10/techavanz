@@ -1,0 +1,46 @@
+ 
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Enviar Mensaje WhatsApp</title>
+    </head>
+    <body>
+        <h1>Enviar Mensaje WhatsApp</h1>
+        <button id="sendMessageBtn">Enviar Mensaje</button>
+
+        <script>
+            document.getElementById('sendMessageBtn').addEventListener('click', function() {
+                const url = 'https://graph.facebook.com/v20.0/387194484481793/messages';
+
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer EAAFSOp4zTZAwBO0ySjK0xZAklcR3GWgMZAJgKZCGD7lCta9GXzYS0tlZBh7P1VF0dvvFNUj7Aw0jpc3si8GKclqIlwVBGoSdF4rhn53qkreUhkTncjMF3jzbCjjTVEektp6wkOZA6qgv5V3vO2K9KNSSxnZC75POIwDcu2ZBKsdZAykaGmkQRFgeDL2T7LjOJxSXtoDll5ZABZBpHiMc8c9bKYO',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        messaging_product: 'whatsapp',
+                        to: '525617941031',
+                        type: 'template',
+                        template: {
+                            name: 'hello_world',
+                            language: {
+                                code: 'en_US'
+                            }
+                        }
+                    })
+                };
+
+                fetch(url, options)
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+            });
+        </script>
+    </body>
+    </html>
+    
+
+ 

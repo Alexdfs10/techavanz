@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Modal</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- Botón para abrir la ventana modal -->
+    <!--<button id="openModalBtn">Abrir Ventana Modal</button>-->
+
+    <!-- La ventana modal -->
+    <div id="myModal" class="modal">
+        <!-- Contenido del modal -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Este es el contenido del modal.</p>
+
+          <input type="text" id="userInput" placeholder="Escribe algo">
+<button id="sumarBtn">Enviar</button>
+<p id="resultado">hola</p>
+
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="abrirventana.js"></script>
+    
+    <!--
+    <script>
+        var enviarinfo = document.getElementById('sumarBtn');
+        var resultadoaa = document.getElementById('resultado');
+        var userInput = document.getElementById('userInput'); // Añadir esta línea para obtener el valor de la entrada de usuario
+
+        enviarinfo.addEventListener('click', () => {
+            var userMessage = userInput.value; // Ahora 'userInput' está definido correctamente
+            resultadoaa.textContent = "correcto " + userMessage; // Mostrar el mensaje ingresado en el resultado
+        });
+    </script> 
+
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="chat-container">
+                <textarea id="userInput" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+            
+                <button id="sumarBtn">Enviar</button>
+        
+                <div id="resultado">prueba</div> 
+            </div>
+        </div>
+    </div>
+-->
+
+
+</body>
+</html>
+

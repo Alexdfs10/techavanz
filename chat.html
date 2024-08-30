@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con ChatGPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            width: 400px;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .response-box {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Caja de texto para ingresar el mensaje -->
+        <textarea id="userInput" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+        
+        <!-- Botón para enviar el mensaje -->
+        <button id="sendButton">Enviar</button>
+        
+        <!-- Caja de texto para mostrar la respuesta -->
+        <div id="responseBox" class="response-box" placeholder="Aquí aparecerá la respuesta..."></div>
+    </div>
+
+    <script>
+        // Obtener elementos del DOM
+        const userInput = document.getElementById('userInput');
+        const responseBox = document.getElementById('responseBox');
+        const sendButton = document.getElementById('sendButton');
+
+        // Agregar evento al botón para enviar el mensaje
+        sendButton.addEventListener('click', () => {
+            const userMessage = userInput.value;
+
+            // Aquí llamas a tu función para enviar el mensaje a ChatGPT
+            sendMessageToChatGPT(userMessage)
+                .then(response => {
+                    responseBox.textContent = response;
+                })
+                .catch(error => {
+                    responseBox.textContent = "Error: " + error.message;
+                });
+        });
+
+        // Función para enviar el mensaje a ChatGPT (simulación)
+        async function sendMessageToChatGPT(message) {
+            // Aquí es donde conectarías con la API de OpenAI
+            // Por ahora, retornaremos una respuesta simulada
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Esta es una respuesta simulada de ChatGPT para: " + message);
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html>
