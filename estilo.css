@@ -207,7 +207,7 @@
 
 
 
-/*galeria de sitios web*/
+/*galeria de sitios web hola*/
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
